@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "aws-sdk": "^2.27.0",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -14,6 +15,7 @@
     "lwip": "0.0.9",
     "morgan": "~1.7.0",
     "q": "^1.4.1",
+    "restler": "^3.4.0",
     "serve-favicon": "~2.3.2"
   }
 }
