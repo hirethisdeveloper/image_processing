@@ -11,8 +11,9 @@ router.get("/:noun/:guid", function (req, res) {
 
     // 960x720
     // 66x66
+    //https://s3.amazonaws.com/assets.htcsoc.net/post/raw/greyed.png
 
-    var imgurl = "https://assets.htcsoc.net/" + req.params.noun + "/raw/" + req.params.guid + "." + ((req.query.ext) ? req.query.ext : "jpg");
+    var imgurl = "https://s3.amazonaws.com/assets.htcsoc.net/" + req.params.noun + "/raw/" + req.params.guid + "." + ((req.query.ext) ? req.query.ext : "jpg");
     var dimRaw = req.query.dim;
 
     var darr       = dimRaw.split("x");
