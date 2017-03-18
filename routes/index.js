@@ -24,13 +24,17 @@ router.get("/:noun/:guid", function (req, res) {
 
     //console.log("imgurl", imgurl);
 
-    utils.process_image(req, imgurl, dimensions).then(function (buffer) {
-        var stream       = require('stream');
-        var bufferStream = new stream.PassThrough();
-        bufferStream.end(buffer);
-        bufferStream.pipe(res);
-        return;
-    });
+    utils.process_image(req, imgurl, dimensions).then(
+        function (buffer) {
+            var stream       = require('stream');
+            var bufferStream = new stream.PassThrough();
+            bufferStream.end(buffer);
+            bufferStream.pipe(res);
+            return;
+        },
+        function (err) {
+            res.send(404);
+        });
 
 });
 
